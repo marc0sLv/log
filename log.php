@@ -1,3 +1,40 @@
+<?php
+
+if (isset($_POST['submit']))
+  {
+    // print_r($_POST['nome']);
+    //  print_r('<br>'); //ql
+    // print_r($_POST['email']);
+    //  print_r('<br>'); //ql
+    // print_r($_POST['senha']);
+    //  print_r('<br>'); // ql
+    // print_r($_POST['sexo']);
+    //  print_r('<br>'); //ql
+    // print_r($_POST['cidade']);
+    //  print_r('<br>'); //ql
+    // print_r($_POST['estado']);
+    //  print_r('<br>'); //ql
+    // print_r($_POST['bairro']);
+  
+
+  include_once('logconnect.php');
+
+  $nome = $_POST['nome'];
+  $email = $_POST['email'];
+  $senha  = password_hash($_POST['senha'], PASSWORD_DEFAULT); // senha segura
+  $sexo = $_POST['sexo'];
+  $cidade = $_POST['cidade'];
+  $estado = $_POST['estado'];
+  $bairro = $_POST['bairro'];
+    
+  $resultado = mysqli_query($conn, "INSERT INTO logers(nome, email, senha, sexo, cidade, estado, bairro) VALUES('$nome', '$email', '$senha', '$sexo', '$cidade', '$estado', '$bairro')");
+}
+
+if (isset($_POST["submit"])) {
+    
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,9 +44,10 @@
     <title>Tela de login</title>
 </head>
 <body>
-    <h2>Login</h2>
+    <h2>Cadastre-se</h2>
+     
     <div class="formu">
-    <form action="logconnect.php" method="POST">
+    <form action="log.php" method="POST">
         <label for="nome">Nome:</label><br>
         <input type="text" id="nome" name="nome" required><br><br>
 
@@ -36,8 +74,12 @@
         <label for="bairro">Bairro:</label><br>
         <input type="text" id="bairro" name="bairro" required><br><br>
 
-        <button type="submit">Cadastrar</button>
+        <button type="submit" name="submit">Cadastrar</button>
     </form>
+    </div>
+     <br><br>
+     <div class="voltar">
+    <a href="home.html">Voltar</a>
     </div>
 </body>
 </html>
