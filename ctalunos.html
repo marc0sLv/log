@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ctalunos.css">
+    <title>Cadastro de livros</title>
+</head>
+<body>
+    <h2>Cadastre seu livro aqui</h2>
+     <div class="fmlr">
+      <form action="" method="post">
+         <label for="nome">Nome:</label><br>
+         <input type="text" id="titulo" name="titulo" required><br><br>
+
+         <label for="idade">Idade:</label><br>
+         <input type="number" id="idade" name="idade" required><br><br>
+ 
+        <label for="turno">Turno:</label><br>
+          <label for="manha">Manhã</label><br>
+           <input type="radio" id="manha" name="turno" value="manhã" required><br><br>
+
+          <label for="tarde">Tarde</label><br>
+           <input type="radio" id="tarde" name="turno" value="tarde"  required><br><br>
+
+          <label for="noite">Noite</label><br>
+           <input type="radio" id="noite" name="turno" value="noite"  required><br><br>
+
+          <label for="bairro">Bairro:</label><br>
+           <input type="text" id="bairro" name="bairro" required><br><br>
+            
+          <label for="cidade">Cidade:</label><br>
+           <input type="text" id="cidade" name="cidade" required><br><br>
+
+          <label for="estado">Estado</label><br>
+           <input type="text" id="estado" name="estado" required><br><br>
+
+          <button type="reset">Limpar formulário</button><br><br>
+            
+          <button type="submit" name="submit">Cadastrar</button><br><br>
+      </form> 
+     </div>
+
+     <div class="voltar">
+        <button type="button" onclick="window.location.href='home.php'">Voltar</button><br><br>
+     </div>
+    
+    
+</body>
+</html>
